@@ -1,0 +1,44 @@
+{
+  "name": "quoteurl",
+  "version": "0.1.0",
+  "description": "Allow URLs to point to any text piece in a document.",
+  "main": "quoteurl.js",
+  "dependencies": {
+    "dom-anchor-text-quote": "^2.0.1",
+    "dom-highlight-range": "^1.0.0",
+    "selectionchange-polyfill": "https://github.com/Treora/selectionchange-polyfill/archive/v1.0.0.tar.gz",
+    "trackr": "^2.0.2",
+    "trackr-reactive-var": "^1.4.0"
+  },
+  "devDependencies": {
+    "browserify": "^13.0.0",
+    "uglify-js": "^2.6.1"
+  },
+  "scripts": {
+    "build": "npm run build-js && npm run build-min-js",
+    "build-js": "browserify quoteurl.js -o dist/quoteurl.js",
+    "build-min-js": "uglifyjs -mc -o dist/quoteurl.min.js dist/quoteurl.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Treora/quoteurl"
+  },
+  "keywords": [
+    "quote",
+    "url",
+    "fragment",
+    "identifier",
+    "anchor",
+    "link",
+    "selector",
+    "selection",
+    "annotation"
+  ],
+  "author": "Gerben",
+  "license": "CC0-1.0",
+  "bugs": {
+    "url": "https://github.com/Treora/quoteurl/issues"
+  },
+  "homepage": "https://github.com/Treora/quoteurl"
+}
