@@ -46,7 +46,7 @@ function processFragmentIdentifier(fragmentIdentifier) {
         }
 
         // Highlight the range.
-        cleanupHighlight = highlightRange(range, 'highlighted');
+        cleanupHighlight = highlightRange(range, 'highlighted-by-url');
 
         // TODO Scroll to highlight.
     }
