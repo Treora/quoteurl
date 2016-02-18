@@ -1,0 +1,627 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.2"
+   width="468.0188"
+   height="621.80048"
+   id="svg2"
+   inkscape:version="0.48.4 r9939"
+   sodipodi:docname="overview.svg">
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="2560"
+     inkscape:window-height="1313"
+     id="namedview135"
+     showgrid="false"
+     fit-margin-top="20"
+     fit-margin-left="20"
+     fit-margin-right="20"
+     fit-margin-bottom="20"
+     inkscape:zoom="0.32489171"
+     inkscape:cx="272.48376"
+     inkscape:cy="258.60253"
+     inkscape:window-x="-12"
+     inkscape:window-y="-3"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg2" />
+  <defs
+     id="defs4" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     transform="matrix(0.68808366,0,0,0.68808366,-45.828018,382.12033)"
+     id="layer1">
+    <rect
+       width="311.37946"
+       height="336.44867"
+       ry="0"
+       x="406.33386"
+       y="-17.610638"
+       id="rect3383-8"
+       style="opacity:0.09999994;color:#000000;fill:#00ffff;stroke:none;stroke-width:3;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" />
+    <rect
+       width="310.91776"
+       height="337.15814"
+       ry="0"
+       x="95.668625"
+       y="-17.89444"
+       id="rect3383"
+       style="opacity:0.2;color:#000000;fill:#ffff00;stroke:none;stroke-width:2.99999976;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" />
+    <text
+       x="190"
+       y="77.372704"
+       id="text3021"
+       xml:space="preserve"
+       style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Utopia;-inkscape-font-specification:Utopia"
+       sodipodi:linespacing="125%"><tspan
+         x="190"
+         y="77.372704"
+         id="tspan3023" /></text>
+    <flowRoot
+       transform="matrix(0.75220535,0,0,0.75220535,-185.66404,-46.956008)"
+       id="flowRoot3095"
+       xml:space="preserve"
+       style="font-size:23.929636px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Utopia;-inkscape-font-specification:Utopia"><flowRegion
+         id="flowRegion3097"><rect
+           width="353.00577"
+           height="122.15159"
+           x="406.5864"
+           y="100.79849"
+           id="rect3099"
+           style="font-size:23.929636px" /></flowRegion><flowPara
+         id="flowPara3337" /></flowRoot>    <flowRoot
+       transform="matrix(0.76819286,0,0,0.76819286,294.77073,-3.7605076)"
+       id="flowRoot3103"
+       xml:space="preserve"
+       style="font-size:23.43161583px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Utopia;-inkscape-font-specification:Utopia"><flowRegion
+         id="flowRegion3105"><rect
+           width="344.32922"
+           height="142.94736"
+           x="183.84776"
+           y="42.209644"
+           id="rect3107"
+           style="font-size:23.43161583px" /></flowRegion><flowPara
+         id="flowPara3352" /></flowRoot>    <text
+       x="328.44122"
+       y="143.54173"
+       transform="scale(0.99884753,1.0011538)"
+       id="text3111"
+       xml:space="preserve"
+       style="font-size:15.97914505px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Utopia;-inkscape-font-specification:Utopia"
+       sodipodi:linespacing="100%"><tspan
+         x="328.44122"
+         y="143.54173"
+         id="tspan3119">window.location.hash</tspan></text>
+    <a
+       xlink:href="https://developer.mozilla.org/en-US/docs/Web/Events/selectionchange"
+       transform="matrix(1.1400521,0,0,1.1426844,-57.895358,-4.8256304)"
+       id="a3416">
+      <text
+         x="434.634"
+         y="257.3624"
+         id="text3115"
+         xml:space="preserve"
+         style="font-size:18px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Utopia;-inkscape-font-specification:Utopia"
+         sodipodi:linespacing="125%"><tspan
+           x="434.634"
+           y="257.3624"
+           id="tspan3330">selectionchange event?</tspan></text>
+    </a>
+    <text
+       x="307.85715"
+       y="-61.566383"
+       id="text3255"
+       xml:space="preserve"
+       style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Utopia;-inkscape-font-specification:Utopia"
+       sodipodi:linespacing="125%"><tspan
+         x="307.85715"
+         y="-61.566383"
+         id="tspan3257" /></text>
+    <text
+       x="121.72338"
+       y="553.85193"
+       id="text3281"
+       xml:space="preserve"
+       style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Utopia;-inkscape-font-specification:Utopia"
+       sodipodi:linespacing="125%"><tspan
+         x="121.72338"
+         y="553.85193"
+         id="tspan3285" /></text>
+    <text
+       x="491.87744"
+       y="18.576925"
+       id="text3060"
+       xml:space="preserve"
+       style="font-size:24px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Utopia;-inkscape-font-specification:Utopia"
+       sodipodi:linespacing="125%"><tspan
+         x="491.87744"
+         y="18.576925"
+         id="tspan3062">Referencing</tspan></text>
+    <text
+       x="164.63753"
+       y="17.213984"
+       id="text3064"
+       xml:space="preserve"
+       style="font-size:24px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Utopia;-inkscape-font-specification:Utopia"
+       sodipodi:linespacing="125%"><tspan
+         x="164.63753"
+         y="17.213984"
+         id="tspan3066">Dereferencing</tspan></text>
+    <text
+       x="346.42856"
+       y="-123.3521"
+       id="text3068"
+       xml:space="preserve"
+       style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Utopia;-inkscape-font-specification:Utopia"
+       sodipodi:linespacing="125%"><tspan
+         x="346.42856"
+         y="-123.3521"
+         id="tspan3070" /></text>
+    <text
+       x="450.71429"
+       y="-121.20925"
+       id="text3072"
+       xml:space="preserve"
+       style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Utopia;-inkscape-font-specification:Utopia"
+       sodipodi:linespacing="125%"><tspan
+         x="450.71429"
+         y="-121.20925"
+         id="tspan3074" /></text>
+    <text
+       x="289.91379"
+       y="-18.904591"
+       id="text3078"
+       xml:space="preserve"
+       style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Utopia;-inkscape-font-specification:Utopia"
+       sodipodi:linespacing="125%"><tspan
+         x="289.91379"
+         y="-18.904591"
+         id="tspan3080" /></text>
+    <a
+       xlink:href="http://www.quirksmode.org/dom/range_intro.html"
+       transform="matrix(1.1400521,0,0,1.1426844,-57.895358,-4.8256304)"
+       id="a3408">
+      <text
+         x="385.03571"
+         y="216.19716"
+         id="text3109"
+         xml:space="preserve"
+         style="font-size:14px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Utopia;-inkscape-font-specification:Utopia"
+         sodipodi:linespacing="125%"><tspan
+           x="385.03571"
+           y="216.19716"
+           id="tspan3111">Range</tspan></text>
+    </a>
+    <a
+       xlink:href="http://www.openannotation.org/spec/core/specific.html#Selectors"
+       transform="matrix(0.84657322,0,0,0.84852789,340.20654,90.661097)"
+       id="a3126">
+      <text
+         x="31.705965"
+         y="137.6183"
+         id="text3113"
+         xml:space="preserve"
+         style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Utopia;-inkscape-font-specification:Utopia"
+         sodipodi:linespacing="125%"><tspan
+           x="31.705965"
+           y="137.6183"
+           id="tspan3115">OA selector</tspan></text>
+    </a>
+    <text
+       x="84.34774"
+       y="105.34417"
+       id="text3117"
+       xml:space="preserve"
+       style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Utopia;-inkscape-font-specification:Utopia"
+       sodipodi:linespacing="125%"><tspan
+         x="84.34774"
+         y="105.34417"
+         id="tspan3120" /></text>
+    <text
+       x="341.42538"
+       y="175.11139"
+       transform="scale(0.99884753,1.0011538)"
+       id="text3122"
+       xml:space="preserve"
+       style="font-size:15.97914505px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Utopia;-inkscape-font-specification:Utopia"
+       sodipodi:linespacing="125%"><tspan
+         x="341.42538"
+         y="175.11139"
+         id="tspan3124">fragment identifier</tspan></text>
+    <a
+       xlink:href="https://developer.mozilla.org/en-US/docs/Web/Reference/Events/hashchange"
+       transform="matrix(1.1400521,0,0,1.1426844,-57.895358,-4.8256304)"
+       id="a3412">
+      <text
+         x="156.08257"
+         y="129.02083"
+         id="text3142"
+         xml:space="preserve"
+         style="font-size:18px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Utopia;-inkscape-font-specification:Utopia"
+         sodipodi:linespacing="125%"><tspan
+           x="156.08257"
+           y="129.02083"
+           id="tspan3144">hashchange event?</tspan></text>
+    </a>
+    <text
+       x="220.41882"
+       y="290.3378"
+       transform="scale(0.99884753,1.0011538)"
+       id="text3146"
+       xml:space="preserve"
+       style="font-size:20.54461479px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Utopia;-inkscape-font-specification:Utopia"
+       sodipodi:linespacing="125%"><tspan
+         x="220.41882"
+         y="290.3378"
+         id="tspan3148">highlight text</tspan></text>
+    <path
+       d="m 566.05811,167.18067 c 6.46468,-3.88392 11.44192,-6.92802 17.10127,-9.23576 m 9.20839,17.63189 c -3.21355,-6.55649 -6.54513,-13.5746 -9.20839,-17.35201 M 554.9602,260.80351 c 1.87488,-48.62681 15.902,-70.10761 27.93609,-102.01898"
+       id="path3186"
+       style="color:#000000;fill:none;stroke:#000000;stroke-width:11.6264925;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+       inkscape:connector-curvature="0" />
+    <path
+       d="m 249.48248,247.23683 c 3.46382,3.39636 7.52893,7.02059 11.75266,9.26438 m 12.75991,-9.76492 c -3.03158,4.26581 -7.82048,7.29625 -11.18397,10.47278 M 239.90696,156.32216 c 17.42823,28.53241 21.42526,65.1468 23.31577,100.29702"
+       id="path3208"
+       style="color:#000000;fill:none;stroke:#000000;stroke-width:11.6264925;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+       inkscape:connector-curvature="0" />
+    <path
+       d="m 326.33226,173.25105 c 1.79989,-0.10844 3.18966,-1.55313 4.17464,-2.16429 m -2.15929,-4.61714 c 0.32561,1.49148 1.57665,2.74231 2.30325,3.60715 m -6.04604,-25.82715 c -21.30924,10.07154 -8.71786,22.45255 6.04604,26.83714"
+       id="path3214"
+       style="color:#000000;fill:none;stroke:#000000;stroke-width:4.35993481;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+       inkscape:connector-curvature="0" />
+    <path
+       d="m 356.1306,206.72533 c 1.25081,-1.33909 2.87694,-2.2687 3.88673,-3.17429 m -3.59882,-3.75143 c 1.29692,0.65254 2.42111,3.0912 3.31093,2.88572 m -25.21229,-27.12147 c -8.2449,19.92829 11.56797,28.10245 25.50018,27.8429"
+       id="path3231"
+       style="color:#000000;fill:none;stroke:#000000;stroke-width:4.35993481;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+       inkscape:connector-curvature="0" />
+    <path
+       d="m 366.06337,237.16961 c 0.81782,0.48825 3.67028,-0.88119 5.47023,-1.58715 m -2.4472,-4.61714 c 1.99779,1.03968 1.4744,2.34552 2.30325,3.75143 m -10.08272,-27.16672 c -9.43313,9.31598 -4.38828,23.49794 10.22667,27.59958"
+       id="path3237"
+       style="color:#000000;fill:none;stroke:#000000;stroke-width:4.35993481;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+       inkscape:connector-curvature="0" />
+    <path
+       d="m 462.25341,201.31223 c 15.36612,2.34394 31.60809,-10.68271 21.57955,-24.28205 m -1.83222,6.12153 c -0.29998,-2.59389 0.95695,-5.6031 1.42507,-7.34582 m 6.71816,2.65265 c -2.75531,-0.60914 -4.39735,-1.74419 -6.71816,-2.85671"
+       id="path3322"
+       style="color:#000000;fill:none;stroke:#000000;stroke-width:4.35993481;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+       inkscape:connector-curvature="0" />
+    <path
+       d="m 467.34292,208.65806 c -2.40277,-1.06325 -5.10068,-2.38298 -6.51458,-3.06076 m -1.83223,7.34583 c -0.54619,-3.51372 0.68647,-4.91338 1.42506,-7.34583 m -26.46548,29.79141 c 17.70865,-1.35969 38.68571,-17.46519 26.05833,-29.58736"
+       id="path3304"
+       style="color:#000000;fill:none;stroke:#000000;stroke-width:4.35993481;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+       inkscape:connector-curvature="0" />
+    <path
+       d="m 497.47288,142.1375 c -1.99221,0.96262 -3.46663,0.40093 -5.2931,0.61215 m 0,6.12153 c 0,-1.90447 0,-3.80895 0,-5.71342 m -3.86804,26.5266 c 15.62471,-3.50453 15.53362,-19.34374 4.47877,-26.73065"
+       id="path3316"
+       style="color:#000000;fill:none;stroke:#000000;stroke-width:4.35993481;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+       inkscape:connector-curvature="0" />
+    <text
+       x="528.89532"
+       y="141.74939"
+       transform="scale(0.99884753,1.0011538)"
+       id="text3334"
+       xml:space="preserve"
+       style="font-size:20.54461479px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Utopia;-inkscape-font-specification:Utopia"
+       sodipodi:linespacing="125%"><tspan
+         x="528.89532"
+         y="141.74939"
+         id="tspan3336">update URL#hash</tspan></text>
+    <path
+       d="m 435.38075,241.91834 c -2.03581,0 -4.07162,0 -6.10742,0 m 0.40715,5.50938 c -0.40672,-1.92584 -1.51901,-4.30001 -1.0179,-4.89722 m 19.34017,25.91445 c -0.98303,-9.84776 -11.87752,-20.49256 -18.72943,-25.91445"
+       id="path3351"
+       style="color:#000000;fill:none;stroke:#000000;stroke-width:4.35993481;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+       inkscape:connector-curvature="0" />
+    <path
+       d="m 371.51738,240.73149 c -15.5614,1.73288 -22.64904,15.17645 -26.03933,29.33526"
+       id="path3358"
+       style="color:#000000;fill:none;stroke:#000000;stroke-width:4.35993481;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+       inkscape:connector-curvature="0" />
+    <path
+       d="m 342.45504,265.01674 c 1.05025,2.13368 1.92554,3.37751 2.87906,5.05001"
+       id="path3364"
+       style="color:#000000;fill:none;stroke:#000000;stroke-width:4.35993481;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+       inkscape:connector-curvature="0" />
+    <path
+       d="m 350.51642,268.33532 c -1.82325,0.52036 -3.48648,1.53083 -5.03837,2.30857"
+       id="path3366"
+       style="color:#000000;fill:none;stroke:#000000;stroke-width:4.35993481;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+       inkscape:connector-curvature="0" />
+    <text
+       x="342.94678"
+       y="-2.2370741"
+       id="text3368"
+       xml:space="preserve"
+       style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Utopia;-inkscape-font-specification:Utopia"
+       sodipodi:linespacing="125%"><tspan
+         x="342.94678"
+         y="-2.2370741"
+         id="tspan3370" /></text>
+    <text
+       x="167.14285"
+       y="-157.63782"
+       id="text3420"
+       xml:space="preserve"
+       style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Utopia;-inkscape-font-specification:Utopia"
+       sodipodi:linespacing="125%"><tspan
+         x="167.14285"
+         y="-157.63782"
+         id="tspan3422" /></text>
+    <text
+       x="87.14286"
+       y="-97.637817"
+       id="text3424"
+       xml:space="preserve"
+       style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Utopia;-inkscape-font-specification:Utopia"
+       sodipodi:linespacing="125%"><tspan
+         x="87.14286"
+         y="-97.637817"
+         id="tspan3426" /></text>
+    <text
+       x="347.14285"
+       y="-31.923532"
+       id="text3432"
+       xml:space="preserve"
+       style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Utopia;-inkscape-font-specification:Utopia"
+       sodipodi:linespacing="125%"><tspan
+         x="347.14285"
+         y="-31.923532"
+         id="tspan3434" /></text>
+    <text
+       x="135.71429"
+       y="-39.066387"
+       id="text3436"
+       xml:space="preserve"
+       style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Utopia;-inkscape-font-specification:Utopia"
+       sodipodi:linespacing="125%"><tspan
+         x="135.71429"
+         y="-39.066387"
+         id="tspan3438" /></text>
+    <g
+       transform="matrix(1.4012168,0,0,1.4012168,64.655497,-1067.4525)"
+       id="g3470">
+      <rect
+         width="283.34778"
+         height="190.49719"
+         ry="13.276242"
+         x="95.964493"
+         y="447.28082"
+         id="rect3267"
+         style="color:#000000;fill:#eefff5;fill-opacity:1;stroke:#000000;stroke-width:1.55576742;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" />
+      <rect
+         width="86.767975"
+         height="16.678362"
+         ry="0"
+         x="253.47876"
+         y="530.60828"
+         id="rect3329"
+         style="color:#000000;fill:#ffff00;stroke:#808000;stroke-width:1.54451752;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" />
+      <rect
+         width="215.95149"
+         height="18.971737"
+         ry="4.4619031"
+         x="126.83833"
+         y="456.98785"
+         id="rect3269"
+         style="color:#000000;fill:#ffffff;stroke:#000000;stroke-width:1.78515136;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" />
+      <text
+         x="137.97289"
+         y="470.61392"
+         id="text3277"
+         xml:space="preserve"
+         style="font-size:13.32724476px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Utopia;-inkscape-font-specification:Utopia"
+         sodipodi:linespacing="125%"><tspan
+           x="137.97289"
+           y="470.61392"
+           id="tspan3279">blabla.bla/bla#&quot;land far far away&quot;</tspan></text>
+      <flowRoot
+         transform="matrix(0.59914582,0,0,0.59914582,62.163411,235.78241)"
+         id="flowRoot3289"
+         xml:space="preserve"
+         style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Utopia;-inkscape-font-specification:Utopia"><flowRegion
+           id="flowRegion3291"><rect
+             width="380.19846"
+             height="299.39349"
+             x="108.5914"
+             y="493.24277"
+             id="rect3293" /></flowRegion><flowPara
+           id="flowPara3441" /></flowRoot>      <text
+         x="134.55658"
+         y="514.88287"
+         id="text3301"
+         xml:space="preserve"
+         style="font-size:16.26350975px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Utopia;-inkscape-font-specification:Utopia"
+         sodipodi:linespacing="125%"><tspan
+           x="134.55658"
+           y="514.88287"
+           id="tspan3303">Epic story</tspan></text>
+      <path
+         d="m 352.11303,473.54478 c -2.7444,-2.98873 -2.54528,-2.73069 -6.31345,-6.06092 m 6.31345,-4.79822 c -1.11473,-0.3573 -3.75294,2.97117 -5.80838,4.79822 m 8.62591,74.83423 c -3.59781,-1.71561 -4.60916,-3.32422 -5.93465,-3.03045 m 3.78807,-5.93465 c -3.7833,4.85728 -1.29585,2.58155 -3.78807,5.3033 m 0.37509,-70.45814 c 35.17224,-0.3989 35.42874,67.14669 0.12627,70.58441"
+         id="path3346"
+         style="color:#000000;fill:none;stroke:#ff0000;stroke-width:4.14871311;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+         inkscape:connector-curvature="0" />
+      <path
+         d="m 242.764,474.70668 c 13.79283,1.53185 72.96375,4.64435 95.81478,-0.8345"
+         id="path3340"
+         style="color:#000000;fill:none;stroke:#ff0000;stroke-width:3.78014326;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+         inkscape:connector-curvature="0" />
+      <text
+         x="135.0032"
+         y="541.67059"
+         id="text3312"
+         xml:space="preserve"
+         style="font-size:11.41864681px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Utopia;-inkscape-font-specification:Utopia"
+         sodipodi:linespacing="125%"><tspan
+           x="135.0032"
+           y="541.67059"
+           id="tspan3314">Once upon a time, in a land far far away,</tspan><tspan
+           x="135.0032"
+           y="555.94391"
+           id="tspan3322">there was a lazy software developer. </tspan><tspan
+           x="135.0032"
+           y="570.21722"
+           id="tspan3316">......</tspan><tspan
+           x="135.0032"
+           y="584.49054"
+           id="tspan3318">......</tspan><tspan
+           x="135.0032"
+           y="598.76385"
+           id="tspan3320">and he coded happily ever after.</tspan></text>
+    </g>
+    <text
+       x="235.71429"
+       y="-39.780674"
+       id="text3489"
+       xml:space="preserve"
+       style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Utopia;-inkscape-font-specification:Utopia"
+       sodipodi:linespacing="125%"><tspan
+         x="235.71429"
+         y="-39.780674"
+         id="tspan3491" /></text>
+    <flowRoot
+       id="flowRoot3493"
+       xml:space="preserve"
+       style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Utopia;-inkscape-font-specification:Utopia"><flowRegion
+         id="flowRegion3495"><rect
+           width="209.28572"
+           height="23.571428"
+           x="121.42857"
+           y="-148.3521"
+           id="rect3497" /></flowRegion><flowPara
+         id="flowPara3499" /></flowRoot>    <flowRoot
+       transform="translate(96.356779,-9.2349523)"
+       id="flowRoot3501"
+       xml:space="preserve"
+       style="font-size:24px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Utopia;-inkscape-font-specification:Utopia"><flowRegion
+         id="flowRegion3503"><rect
+           width="440"
+           height="87.14286"
+           x="102.14286"
+           y="-94.066391"
+           id="rect3505"
+           style="font-size:24px" /></flowRegion><flowPara
+         id="flowPara3324" /></flowRoot>    <flowRoot
+       id="flowRoot3509"
+       xml:space="preserve"
+       style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Utopia;-inkscape-font-specification:Utopia"><flowRegion
+         id="flowRegion3511"><rect
+           width="547.85712"
+           height="113.57143"
+           x="120"
+           y="-581.20923"
+           id="rect3513" /></flowRegion><flowPara
+         id="flowPara3515" /></flowRoot>    <flowRoot
+       id="flowRoot3517"
+       xml:space="preserve"
+       style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Utopia;-inkscape-font-specification:Utopia"><flowRegion
+         id="flowRegion3519"><rect
+           width="415"
+           height="157.85715"
+           x="217.14285"
+           y="357.36218"
+           id="rect3521" /></flowRegion><flowPara
+         id="flowPara3523" /></flowRoot>    <flowRoot
+       id="flowRoot3525"
+       xml:space="preserve"
+       style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Utopia;-inkscape-font-specification:Utopia"><flowRegion
+         id="flowRegion3527"><rect
+           width="409.28571"
+           height="106.42857"
+           x="188.57143"
+           y="-560.49493"
+           id="rect3529" /></flowRegion><flowPara
+         id="flowPara3531" /></flowRoot>    <flowRoot
+       transform="matrix(1.1607304,0,0,1.1607304,23.164937,84.717411)"
+       id="flowRoot4301"
+       xml:space="preserve"
+       style="font-size:20.67663574px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Utopia;-inkscape-font-specification:Utopia"><flowRegion
+         id="flowRegion4303"><rect
+           width="274.66504"
+           height="170.89523"
+           x="199.50513"
+           y="-529.03162"
+           id="rect4305"
+           style="font-size:20.67663574px" /></flowRegion><flowPara
+         id="flowPara3362" /></flowRoot>    <text
+       x="127.8217"
+       y="466.26282"
+       transform="translate(75.668625,-544.90324)"
+       id="text3328"
+       xml:space="preserve"
+       style="font-size:24px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Utopia;-inkscape-font-specification:Utopia"
+       sodipodi:linespacing="125%"><tspan
+         x="127.8217"
+         y="466.26282"
+         id="tspan3331">To both interpret and create the URLs,</tspan><tspan
+         x="127.8217"
+         y="496.26282"
+         id="tspan3333">the module works bidirectionally:</tspan></text>
+    <text
+       x="43.711048"
+       y="593.42224"
+       transform="translate(75.668625,-544.90324)"
+       id="text3344"
+       xml:space="preserve"
+       style="font-size:18px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Utopia;-inkscape-font-specification:Utopia"
+       sodipodi:linespacing="125%"><tspan
+         x="43.711048"
+         y="593.42224"
+         id="tspan3346">Upon page load or URL change,</tspan><tspan
+         x="43.711048"
+         y="615.92224"
+         id="tspan3348">if the URL specifies a quotation,</tspan><tspan
+         x="43.711048"
+         y="638.42224"
+         id="tspan3350">find and highlight it.</tspan></text>
+    <text
+       x="434.62903"
+       y="48.51899"
+       id="text3356"
+       xml:space="preserve"
+       style="font-size:18px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Utopia;-inkscape-font-specification:Utopia"
+       sodipodi:linespacing="125%"><tspan
+         x="434.62903"
+         y="48.51899"
+         id="tspan3358">Upon text selection by the user,</tspan><tspan
+         x="434.62903"
+         y="71.01899"
+         id="tspan3360">put selected quote into URL.</tspan></text>
+    <text
+       x="255.14883"
+       y="-508.4657"
+       id="text3366"
+       xml:space="preserve"
+       style="font-size:24px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Utopia;-inkscape-font-specification:Utopia"
+       sodipodi:linespacing="125%"><tspan
+         x="255.14883"
+         y="-508.4657"
+         id="tspan3368">Allow URLs to point to any</tspan><tspan
+         x="255.14883"
+         y="-478.4657"
+         id="tspan3371">text piece in a document:</tspan></text>
+  </g>
+</svg>
