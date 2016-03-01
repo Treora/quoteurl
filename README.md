@@ -1,6 +1,12 @@
 # quoteurl
 ## Overview
-![Allow URLs to point to any text piece in a document. To both interpret and create the URLs, the module works bidirectionally.](https://rawgit.com/Treora/quoteurl/master/overview.svg)
+The purpose is to allow URLs to point to any text piece in a document:
+
+![Sketch of the idea](https://rawgit.com/Treora/quoteurl/master/idea.svg)
+
+To both interpret and create the URLs, the module works bidirectionally:
+
+![Overview of the functionality](https://rawgit.com/Treora/quoteurl/master/overview.svg)
 
 ## Example
 To see things in action, check out this [quote in the example document](https://rawgit.com/Treora/quoteurl/master/example.html#"libero egestas"); then try select some other words to get a new URL.
