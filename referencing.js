@@ -28,14 +28,20 @@ function onSelectionChange(event) {
 // Turn selection into fragment identifier, update window's URL.
 function processSelection(selection) {
     if (selection!==null && !selection.isCollapsed) {
-        // Signal our activity (intended to disable dereferencing).
-        active.set(true);
-
         // Transform selection -> range -> selector -> fragment identifier.
         var range = selection.getRangeAt(0);
         var selector = TextQuoteAnchor.fromRange(document.body, range).toSelector();
         var fragmentIdentifier = selectorInUrl.fragmentIdentifierFromSelector(selector);
-        window.location.hash = fragmentIdentifier;
+        if (active.get()) {
+            // If an existing selection is modified, prevent deluging browsing history.
+            window.location.replace('#'+fragmentIdentifier);
+        }
+        else {
+            window.location.assign('#'+fragmentIdentifier);
+        }
+
+        // Signal our activity (intended to disable dereferencing).
+        active.set(true);
     }
     else { // Nothing is selected.
         // Clear fragment identifier
@@ -49,9 +55,7 @@ function processSelection(selection) {
 
 function clearFragmentIdentifier() {
     // Remove our influence from the URL (sets hash to empty string).
-    var selector = null;
-    var fragmentIdentifier = selectorInUrl.fragmentIdentifierFromSelector(selector);
-    window.location.hash = fragmentIdentifier;
+    window.location.assign('');
 }
 
 
@@ -72,9 +76,9 @@ function enable() {
     // Run every time the selection changes.
     document.addEventListener("selectionchange", onSelectionChange);
 
-    // Run once directly if the user could already have been selecting things.
+    // Trigger once artificially if the user could already have been selecting things.
     if (['interactive', 'complete'].indexOf(document.readyState) > -1) {
-        onSelectionChange();
+        window.setTimeout(onSelectionChange, 0);
     }
 }
 
