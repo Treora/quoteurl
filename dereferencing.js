@@ -90,7 +90,7 @@ function enable() {
 
     // Run directly if the DOM has already been loaded.
     if (['loaded', 'interactive', 'complete'].indexOf(document.readyState) > -1) {
-        onHashChange();
+        window.setTimeout(onHashChange, 0);
     }
     else {
         // Or run as soon as the DOM has loaded.
