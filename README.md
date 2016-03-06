@@ -10,7 +10,6 @@ To both interpret and create the URLs, the module works bidirectionally:
 
 ## Example
 To see things in action, check out this [quote in the example document](https://rawgit.com/Treora/quoteurl/master/example.html#"libero egestas"); then try select some other words to get a new URL.
-(it seems that Firefox/Gecko has some issues still, Chromium/Webkit may work better)
 
 ## Usage
 To make a page support quote-URLs, simply include `dist/quoteurl.js` (or `dist/quoteurl.min.js`) in that page: `<script src="dist/quoteurl.js"></script>`.
@@ -20,7 +19,7 @@ When using tools like [Browserify](http://browserify.org), `require('quoteurl');
 Although currently very little extension or customisation is possible, the appearance of the highlighted text can be customised by styling the CSS class `highlighted-by-url` (use `!important` to override the property `background-color`).
 
 ## Notes
-This implementation is a **proof of concept**, and is not reliable for production use. Some browsers do not always locate the quote correctly, and it usually messes up when the quoted text appears multiple times.
+This implementation is a **proof of concept**, and is not reliable for production use. It usually messes up when the quoted text appears multiple times.
 
 Moreover, a simple syntax of fragment identifiers has been chosen tentatively. This encoding may change in future versions, which would thus break with URLs created with this version; which leads us to the next point.
 
