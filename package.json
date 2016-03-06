@@ -4,7 +4,7 @@
   "description": "Allow URLs to point to any text piece in a document.",
   "main": "quoteurl.js",
   "dependencies": {
-    "dom-anchor-text-quote": "git+https://github.com/Treora/dom-anchor-text-quote.git#3f58dbf",
+    "dom-anchor-text-quote": "git+https://github.com/Treora/dom-anchor-text-quote.git#0018ae3",
     "dom-highlight-range": "^1.0.0",
     "selectionchange-polyfill": "https://github.com/Treora/selectionchange-polyfill/archive/v1.0.0.tar.gz",
     "trackr": "^2.0.2",
