@@ -26,6 +26,12 @@ function selectorFromFragmentIdentifier(fragmentIdentifier) {
 }
 
 
+function simplifyWhitespace(string) {
+    // Turn any whitespace into a single space, and trim whitespace at the start or end.
+    return string.replace(/\s+/g, ' ').replace(/^ | $/,'');
+}
+
+
 function fragmentIdentifierFromSelector(selector) {
     if (selector === null) {
         // No selector means empty fragment identifier.
@@ -41,7 +47,7 @@ function fragmentIdentifierFromSelector(selector) {
         var maybeSuffix = (selector.suffix !== undefined) ? '('+selector.suffix+')' : '';
         var fragmentIdentifier = maybePrefix + '"'+exact+'"' + maybeSuffix;
         */
-        var fragmentIdentifier = '"'+exact+'"';
+        var fragmentIdentifier = '"' + simplifyWhitespace(exact) + '"';
 
         return fragmentIdentifier;
     }
