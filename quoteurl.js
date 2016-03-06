@@ -16,17 +16,9 @@ Tracker.autorun(function () {
 });
 
 
-// Specify highlights to have a yellow background.
-function setDefaultHighlightStyle() {
+// Give highlights a yellow background by default.
+(function setDefaultHighlightStyle() {
     var stylesheet = document.createElement('style');
-    stylesheet.innerHTML = ".highlighted-by-url {background-color: yellow;}";
-    document.body.appendChild(stylesheet);
-}
-if (['loaded', 'interactive', 'complete'].indexOf(document.readyState) > -1) {
-    // Run directly if possible
-    setDefaultHighlightStyle();
-}
-else {
-    // Or run as soon as the DOM has loaded.
-    window.addEventListener("load", setDefaultHighlightStyle);
-}
+    stylesheet.innerHTML = '.highlighted-by-url {background-color: yellow;}';
+    document.head.appendChild(stylesheet);
+})();
