@@ -6,6 +6,9 @@
  * Resulting in a URL like this: http://example.com/page.html#(Lorem )"ipsum"( dolor sit)
  */
 
+// An arbitrary length, quotes beyond which will be shortened.
+var MAX_QUOTE_LENGTH = 61;
+
 function selectorFromFragmentIdentifier(fragmentIdentifier) {
     const pattern = /(?:\((.+)\))?(?:"|%22)(.+)(?:"|%22)(?:\((.+)\))?/;
     var match = fragmentIdentifier.match(pattern);
@@ -31,6 +34,44 @@ function simplifyWhitespace(string) {
     return string.replace(/\s+/g, ' ').replace(/^ | $/,'');
 }
 
+// Shorten too long quotes by replacing middle part with dots '...'.
+function shortenQuote(quote, maxLength) {
+    var length = quote.length;
+    if (length <= maxLength) {
+        // Text to quote is short enough. Quote in full.
+        return quote;
+    }
+    else {
+        // Text to quote is too long. Shorten it.
+        var ellipsis = '...';
+        // Quote the first and last pieces of the text.
+        var pieceMaxLength = Math.floor((maxLength - ellipsis.length)/2);
+
+        // First, try to nicely break the quote at whitespace.
+        {
+            // Do not allow the pieces to be too short either. Half the maximum seems reasonable.
+            var pieceMinLength = Math.ceil(pieceMaxLength/2);
+            // Get the start and end pieces
+            var startAndEndRegExp = '^(.{' + (pieceMinLength-1) + ',' + (pieceMaxLength-1) + '}\\s)' // Starting piece (ends with space)
+                                  + '.*?' // Anything in between, non-greedy
+                                  + '(\\s.{' + (pieceMinLength-1) + ',' + (pieceMaxLength-1) + '})$'; // Ending piece (starts with space)
+            var startAndEnd = quote.match(new RegExp(startAndEndRegExp));
+        }
+        var start, end;
+        if (startAndEnd !== null) {
+            // We found nice whitespace points at which to break the quote.
+            start = startAndEnd[1];
+            end = startAndEnd[2];
+        }
+        else {
+            // No nice place to break it; just break it.
+            start = quote.substring(0, pieceMaxLength);
+            end = quote.substring(length-pieceMaxLength, length);
+        }
+        return start + ellipsis + end;
+    }
+}
+
 
 function fragmentIdentifierFromSelector(selector) {
     if (selector === null) {
@@ -40,14 +81,16 @@ function fragmentIdentifierFromSelector(selector) {
 
     var type = selector.type;
     if (type == 'TextQuoteSelector') {
-        var exact = selector.exact;
+        var quote = selector.exact;
         /*
         // TODO Add prefix and suffix when the exact quote is ambiguous (e.g. appears twice)
         var maybePrefix = (selector.prefix !== undefined) ? '('+selector.prefix+')' : '';
         var maybeSuffix = (selector.suffix !== undefined) ? '('+selector.suffix+')' : '';
         var fragmentIdentifier = maybePrefix + '"'+exact+'"' + maybeSuffix;
         */
-        var fragmentIdentifier = '"' + simplifyWhitespace(exact) + '"';
+        var quote = simplifyWhitespace(quote);
+        quote = shortenQuote(quote, MAX_QUOTE_LENGTH);
+        var fragmentIdentifier = '"' + quote + '"';
 
         return fragmentIdentifier;
     }
