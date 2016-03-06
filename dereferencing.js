@@ -19,8 +19,8 @@ function onHashChange(event) {
         // Read the #hash part from the URL
         var hash = window.location.hash;
 
-        // Ditch the '#'.
-        var fragmentIdentifier = hash.substring(1, hash.length);
+        // Ditch the '#', decode URI-escaped characters
+        var fragmentIdentifier = window.decodeURIComponent(hash.substring(1, hash.length));
 
         // Do our thing.
         processFragmentIdentifier(fragmentIdentifier);
