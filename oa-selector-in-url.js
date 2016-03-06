@@ -10,7 +10,7 @@
 var MAX_QUOTE_LENGTH = 61;
 
 function selectorFromFragmentIdentifier(fragmentIdentifier) {
-    const pattern = /(?:\((.+)\))?(?:"|%22)(.+)(?:"|%22)(?:\((.+)\))?/;
+    const pattern = /(?:\((.+)\))?"(.+)"(?:\((.+)\))?/;
     var match = fragmentIdentifier.match(pattern);
     if (match) {
         var prefix = match[1];
