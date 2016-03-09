@@ -6,6 +6,7 @@
   "dependencies": {
     "dom-anchor-text-quote": "git+https://github.com/Treora/dom-anchor-text-quote.git#0018ae3",
     "dom-highlight-range": "^1.0.0",
+    "scroll-into-view": "^1.6.0",
     "selectionchange-polyfill": "https://github.com/Treora/selectionchange-polyfill/archive/v1.0.0.tar.gz",
     "trackr": "^2.0.2",
     "trackr-reactive-var": "^1.4.0"

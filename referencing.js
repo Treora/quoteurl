@@ -28,6 +28,10 @@ function onSelectionChange(event) {
 // Turn selection into fragment identifier, update window's URL.
 function processSelection(selection) {
     if (selection!==null && !selection.isCollapsed) {
+        // Signal our activity (intended to disable dereferencing).
+        active.set(true);
+        Tracker.flush(); // Force update now to prevent race condition with hashchange event.
+
         // Transform selection -> range -> selector -> fragment identifier.
         var range = selection.getRangeAt(0);
         var selector = TextQuoteAnchor.fromRange(document.body, range).toSelector();
@@ -39,9 +43,6 @@ function processSelection(selection) {
         else {
             window.location.assign('#'+fragmentIdentifier);
         }
-
-        // Signal our activity (intended to disable dereferencing).
-        active.set(true);
     }
     else { // Nothing is selected.
         // Clear fragment identifier

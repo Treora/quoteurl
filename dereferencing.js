@@ -4,6 +4,7 @@ var Tracker = require('trackr');
 var ReactiveVar = require('trackr-reactive-var');
 var TextQuoteAnchor = require('dom-anchor-text-quote');
 var highlightRange = require('dom-highlight-range');
+var scrollIntoView = require('scroll-into-view');
 
 var selectorInUrl = require('./oa-selector-in-url');
 
@@ -16,19 +17,27 @@ var cleanupHighlight = null;
 
 function onHashChange(event) {
     if (enabled.get()) {
+        var fragmentIdentifier = getFragmentIdentifier();
+        processFragmentIdentifier(fragmentIdentifier, {scroll: true});
+    }
+}
+
+
+function getFragmentIdentifier() {
         // Read the #hash part from the URL
         var hash = window.location.hash;
 
         // Ditch the '#', decode URI-escaped characters
         var fragmentIdentifier = window.decodeURIComponent(hash.substring(1, hash.length));
 
-        // Do our thing.
-        processFragmentIdentifier(fragmentIdentifier);
-    }
+        return fragmentIdentifier;
 }
 
 
-function processFragmentIdentifier(fragmentIdentifier) {
+function processFragmentIdentifier(fragmentIdentifier, options) {
+    if (options === undefined)  options = {};
+    var scroll = options.scroll;
+
     // Remove the previous highlight, if any.
     if (cleanupHighlight !== null) {
         cleanupHighlight();
@@ -48,7 +57,11 @@ function processFragmentIdentifier(fragmentIdentifier) {
         // Highlight the range.
         cleanupHighlight = highlightRange(range, 'highlighted-by-url');
 
-        // TODO Scroll to highlight.
+        // Scroll to the start of the range if desired.
+        if (scroll) {
+            var element = range.startContainer.parentElement;
+            scrollIntoView(element, {time: 200});
+        }
     }
 }
 
@@ -71,6 +84,25 @@ function rangeFromSelector(selector) {
 }
 
 
+function runOnce(options) {
+    if (options === undefined)  options = {};
+
+    var run = function () {
+        var fragmentIdentifier = getFragmentIdentifier();
+        processFragmentIdentifier(fragmentIdentifier, options);
+    };
+
+    // Run directly or as soon as possible.
+    if (['loaded', 'interactive', 'complete'].indexOf(document.readyState) > -1) {
+        run();
+    }
+    else {
+        // Run as soon as the DOM has loaded.
+        window.addEventListener("load", run);
+    }
+}
+
+
 Tracker.autorun(function () {
     // Add and remove event listeners whenever we are switched on or off
     if (enabled.get()) {
@@ -87,15 +119,6 @@ Tracker.autorun(function () {
 function enable() {
     // Run every time the fragment identifier changes.
     window.addEventListener("hashchange", onHashChange);
-
-    // Run directly if the DOM has already been loaded.
-    if (['loaded', 'interactive', 'complete'].indexOf(document.readyState) > -1) {
-        window.setTimeout(onHashChange, 0);
-    }
-    else {
-        // Or run as soon as the DOM has loaded.
-        window.addEventListener("load", onHashChange);
-    }
 }
 
 
@@ -113,4 +136,5 @@ function disable() {
 
 module.exports = {
     enabled: enabled,
+    runOnce: runOnce,
 };
