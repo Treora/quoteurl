@@ -339,6 +339,7 @@ var Tracker = require('trackr');
 var ReactiveVar = require('trackr-reactive-var');
 var TextQuoteAnchor = require('dom-anchor-text-quote');
 var highlightRange = require('dom-highlight-range');
+var scrollIntoView = require('scroll-into-view');
 
 var selectorInUrl = require('./oa-selector-in-url');
 
@@ -351,19 +352,27 @@ var cleanupHighlight = null;
 
 function onHashChange(event) {
     if (enabled.get()) {
+        var fragmentIdentifier = getFragmentIdentifier();
+        processFragmentIdentifier(fragmentIdentifier, {scroll: true});
+    }
+}
+
+
+function getFragmentIdentifier() {
         // Read the #hash part from the URL
         var hash = window.location.hash;
 
         // Ditch the '#', decode URI-escaped characters
         var fragmentIdentifier = window.decodeURIComponent(hash.substring(1, hash.length));
 
-        // Do our thing.
-        processFragmentIdentifier(fragmentIdentifier);
-    }
+        return fragmentIdentifier;
 }
 
 
-function processFragmentIdentifier(fragmentIdentifier) {
+function processFragmentIdentifier(fragmentIdentifier, options) {
+    if (options === undefined)  options = {};
+    var scroll = options.scroll;
+
     // Remove the previous highlight, if any.
     if (cleanupHighlight !== null) {
         cleanupHighlight();
@@ -383,7 +392,11 @@ function processFragmentIdentifier(fragmentIdentifier) {
         // Highlight the range.
         cleanupHighlight = highlightRange(range, 'highlighted-by-url');
 
-        // TODO Scroll to highlight.
+        // Scroll to the start of the range if desired.
+        if (scroll) {
+            var element = range.startContainer.parentElement;
+            scrollIntoView(element, {time: 200});
+        }
     }
 }
 
@@ -406,6 +419,25 @@ function rangeFromSelector(selector) {
 }
 
 
+function runOnce(options) {
+    if (options === undefined)  options = {};
+
+    var run = function () {
+        var fragmentIdentifier = getFragmentIdentifier();
+        processFragmentIdentifier(fragmentIdentifier, options);
+    };
+
+    // Run directly or as soon as possible.
+    if (['loaded', 'interactive', 'complete'].indexOf(document.readyState) > -1) {
+        run();
+    }
+    else {
+        // Run as soon as the DOM has loaded.
+        window.addEventListener("load", run);
+    }
+}
+
+
 Tracker.autorun(function () {
     // Add and remove event listeners whenever we are switched on or off
     if (enabled.get()) {
@@ -422,15 +454,6 @@ Tracker.autorun(function () {
 function enable() {
     // Run every time the fragment identifier changes.
     window.addEventListener("hashchange", onHashChange);
-
-    // Run directly if the DOM has already been loaded.
-    if (['loaded', 'interactive', 'complete'].indexOf(document.readyState) > -1) {
-        window.setTimeout(onHashChange, 0);
-    }
-    else {
-        // Or run as soon as the DOM has loaded.
-        window.addEventListener("load", onHashChange);
-    }
 }
 
 
@@ -448,9 +471,10 @@ function disable() {
 
 module.exports = {
     enabled: enabled,
+    runOnce: runOnce,
 };
 
-},{"./oa-selector-in-url":12,"dom-anchor-text-quote":1,"dom-highlight-range":2,"trackr":11,"trackr-reactive-var":8}],4:[function(require,module,exports){
+},{"./oa-selector-in-url":15,"dom-anchor-text-quote":1,"dom-highlight-range":2,"scroll-into-view":9,"trackr":14,"trackr-reactive-var":11}],4:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -762,6 +786,283 @@ function shim(iter, root) {
 module.exports = exports['default'];
 
 },{}],7:[function(require,module,exports){
+(function (global){
+var now = require('performance-now')
+  , root = typeof window === 'undefined' ? global : window
+  , vendors = ['moz', 'webkit']
+  , suffix = 'AnimationFrame'
+  , raf = root['request' + suffix]
+  , caf = root['cancel' + suffix] || root['cancelRequest' + suffix]
+
+for(var i = 0; !raf && i < vendors.length; i++) {
+  raf = root[vendors[i] + 'Request' + suffix]
+  caf = root[vendors[i] + 'Cancel' + suffix]
+      || root[vendors[i] + 'CancelRequest' + suffix]
+}
+
+// Some versions of FF have rAF but not cAF
+if(!raf || !caf) {
+  var last = 0
+    , id = 0
+    , queue = []
+    , frameDuration = 1000 / 60
+
+  raf = function(callback) {
+    if(queue.length === 0) {
+      var _now = now()
+        , next = Math.max(0, frameDuration - (_now - last))
+      last = next + _now
+      setTimeout(function() {
+        var cp = queue.slice(0)
+        // Clear queue here to prevent
+        // callbacks from appending listeners
+        // to the current frame's queue
+        queue.length = 0
+        for(var i = 0; i < cp.length; i++) {
+          if(!cp[i].cancelled) {
+            try{
+              cp[i].callback(last)
+            } catch(e) {
+              setTimeout(function() { throw e }, 0)
+            }
+          }
+        }
+      }, Math.round(next))
+    }
+    queue.push({
+      handle: ++id,
+      callback: callback,
+      cancelled: false
+    })
+    return id
+  }
+
+  caf = function(handle) {
+    for(var i = 0; i < queue.length; i++) {
+      if(queue[i].handle === handle) {
+        queue[i].cancelled = true
+      }
+    }
+  }
+}
+
+module.exports = function(fn) {
+  // Wrap in a new function to prevent
+  // `cancel` potentially being assigned
+  // to the native rAF function
+  return raf.call(root, fn)
+}
+module.exports.cancel = function() {
+  caf.apply(root, arguments)
+}
+module.exports.polyfill = function() {
+  root.requestAnimationFrame = raf
+  root.cancelAnimationFrame = caf
+}
+
+}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
+},{"performance-now":8}],8:[function(require,module,exports){
+(function (process){
+// Generated by CoffeeScript 1.7.1
+(function() {
+  var getNanoSeconds, hrtime, loadTime;
+
+  if ((typeof performance !== "undefined" && performance !== null) && performance.now) {
+    module.exports = function() {
+      return performance.now();
+    };
+  } else if ((typeof process !== "undefined" && process !== null) && process.hrtime) {
+    module.exports = function() {
+      return (getNanoSeconds() - loadTime) / 1e6;
+    };
+    hrtime = process.hrtime;
+    getNanoSeconds = function() {
+      var hr;
+      hr = hrtime();
+      return hr[0] * 1e9 + hr[1];
+    };
+    loadTime = getNanoSeconds();
+  } else if (Date.now) {
+    module.exports = function() {
+      return Date.now() - loadTime;
+    };
+    loadTime = Date.now();
+  } else {
+    module.exports = function() {
+      return new Date().getTime() - loadTime;
+    };
+    loadTime = new Date().getTime();
+  }
+
+}).call(this);
+
+}).call(this,require('_process'))
+},{"_process":18}],9:[function(require,module,exports){
+var raf = require('raf'),
+    COMPLETE = 'complete',
+    CANCELED = 'canceled';
+
+function setElementScroll(element, x, y){
+    if(element === window){
+        element.scrollTo(x, y);
+    }else{
+        element.scrollLeft = x;
+        element.scrollTop = y;
+    }
+}
+
+function getTargetScrollLocation(target, parent, align){
+    var targetPosition = target.getBoundingClientRect(),
+        parentPosition,
+        x,
+        y,
+        differenceX,
+        differenceY,
+        leftAlign = align && align.left != null ? align.left : 0.5,
+        topAlign = align && align.top != null ? align.top : 0.5,
+        leftScalar = leftAlign,
+        topScalar = topAlign;
+
+    if(parent === window){
+        x = targetPosition.left + window.scrollX - window.innerWidth * leftScalar + Math.min(targetPosition.width, window.innerWidth) * leftScalar;
+        y = targetPosition.top + window.scrollY - window.innerHeight * topScalar + Math.min(targetPosition.height, window.innerHeight) * topScalar;
+        x = Math.max(Math.min(x, document.body.scrollWidth - window.innerWidth * leftScalar), 0);
+        y = Math.max(Math.min(y, document.body.scrollHeight- window.innerHeight * topScalar), 0);
+        differenceX = x - window.scrollX;
+        differenceY = y - window.scrollY;
+    }else{
+        parentPosition = parent.getBoundingClientRect();
+        var offsetTop = targetPosition.top - (parentPosition.top - parent.scrollTop);
+        var offsetLeft = targetPosition.left - (parentPosition.left - parent.scrollLeft);
+        x = offsetLeft + (targetPosition.width * leftScalar) - parent.clientWidth * leftScalar;
+        y = offsetTop + (targetPosition.height * topScalar) - parent.clientHeight * topScalar;
+        x = Math.max(Math.min(x, parent.scrollWidth - parent.clientWidth), 0);
+        y = Math.max(Math.min(y, parent.scrollHeight - parent.clientHeight), 0);
+        differenceX = x - parent.scrollLeft;
+        differenceY = y - parent.scrollTop;
+    }
+
+    return {
+        x: x,
+        y: y,
+        differenceX: differenceX,
+        differenceY: differenceY
+    };
+}
+
+function animate(parent){
+    raf(function(){
+        var scrollSettings = parent._scrollSettings;
+        if(!scrollSettings){
+            return;
+        }
+
+        var location = getTargetScrollLocation(scrollSettings.target, parent, scrollSettings.align),
+            time = Date.now() - scrollSettings.startTime,
+            timeValue = Math.min(1 / scrollSettings.time * time, 1);
+
+        if(
+            time > scrollSettings.time + 20 ||
+            (Math.abs(location.differenceY) <= 1 && Math.abs(location.differenceX) <= 1)
+        ){
+            setElementScroll(parent, location.x, location.y);
+            parent._scrollSettings = null;
+            return scrollSettings.end(COMPLETE);
+        }
+
+        var valueX = timeValue,
+            valueY = timeValue;
+
+        setElementScroll(parent,
+            location.x - location.differenceX * Math.pow(1 - valueX, valueX / 2),
+            location.y - location.differenceY * Math.pow(1 - valueY, valueY / 2)
+        );
+
+        animate(parent);
+    });
+}
+
+function transitionScrollTo(target, parent, settings, callback){
+    var idle = !parent._scrollSettings;
+
+    if(parent._scrollSettings){
+        parent._scrollSettings.end(CANCELED);
+    }
+
+    function end(endType){
+        parent._scrollSettings = null;
+        callback(endType);
+        parent.removeEventListener('touchstart', end);
+    }
+
+    parent._scrollSettings = {
+        startTime: Date.now(),
+        target: target,
+        time: settings.time,
+        ease: settings.ease,
+        align: settings.align,
+        end: end
+    };
+    parent.addEventListener('touchstart', end.bind(null, CANCELED));
+
+    if(idle){
+        animate(parent);
+    }
+}
+
+module.exports = function(target, settings, callback){
+    if(!target){
+        return;
+    }
+
+    if(typeof settings === 'function'){
+        callback = settings;
+        settings = null;
+    }
+
+    if(!settings){
+        settings = {};
+    }
+
+    settings.time = settings.time || 1000;
+    settings.ease = settings.ease || function(v){return v;};
+
+    var parent = target.parentElement,
+        parents = 0;
+
+    function done(endType){
+        parents--;
+        if(!parents){
+            callback && callback(endType);
+        }
+    }
+
+    while(parent){
+        if(
+            settings.validTarget ? settings.validTarget(parent, parents) : true &&
+            parent === window ||
+            (
+                parent.scrollHeight !== parent.clientHeight ||
+                parent.scrollWidth !== parent.clientWidth
+            ) &&
+            getComputedStyle(parent).overflow !== 'hidden'
+        ){
+            parents++;
+            transitionScrollTo(target, parent, settings, done);
+        }
+
+        parent = parent.parentElement;
+
+        if(!parent){
+            return;
+        }
+
+        if(parent.tagName === 'BODY'){
+            parent = window;
+        }
+    }
+};
+},{"raf":7}],10:[function(require,module,exports){
 // github.com/2is10/selectionchange-polyfill
 
 var selectionchange = (function (undefined) {
@@ -903,7 +1204,7 @@ if (typeof module !== 'undefined') {
     module.exports = selectionchange;
 }
 
-},{}],8:[function(require,module,exports){
+},{}],11:[function(require,module,exports){
 var Tracker = require('trackr');
 
 var ReactiveVar;
@@ -1006,7 +1307,7 @@ ReactiveVar.prototype._numListeners = function() {
 
 module.exports = ReactiveVar;
 
-},{"trackr":11}],9:[function(require,module,exports){
+},{"trackr":14}],12:[function(require,module,exports){
 var now = require('performance-now')
   , global = typeof window === 'undefined' ? {} : window
   , vendors = ['moz', 'webkit']
@@ -1076,43 +1377,9 @@ module.exports.cancel = function() {
   caf.apply(global, arguments)
 }
 
-},{"performance-now":10}],10:[function(require,module,exports){
-(function (process){
-// Generated by CoffeeScript 1.7.1
-(function() {
-  var getNanoSeconds, hrtime, loadTime;
-
-  if ((typeof performance !== "undefined" && performance !== null) && performance.now) {
-    module.exports = function() {
-      return performance.now();
-    };
-  } else if ((typeof process !== "undefined" && process !== null) && process.hrtime) {
-    module.exports = function() {
-      return (getNanoSeconds() - loadTime) / 1e6;
-    };
-    hrtime = process.hrtime;
-    getNanoSeconds = function() {
-      var hr;
-      hr = hrtime();
-      return hr[0] * 1e9 + hr[1];
-    };
-    loadTime = getNanoSeconds();
-  } else if (Date.now) {
-    module.exports = function() {
-      return Date.now() - loadTime;
-    };
-    loadTime = Date.now();
-  } else {
-    module.exports = function() {
-      return new Date().getTime() - loadTime;
-    };
-    loadTime = new Date().getTime();
-  }
-
-}).call(this);
-
-}).call(this,require('_process'))
-},{"_process":15}],11:[function(require,module,exports){
+},{"performance-now":13}],13:[function(require,module,exports){
+arguments[4][8][0].apply(exports,arguments)
+},{"_process":18,"dup":8}],14:[function(require,module,exports){
 (function (global){
 /////////////////////////////////////////////////////
 // Package docs at http://docs.meteor.com/#tracker //
@@ -1735,7 +2002,7 @@ return Trackr;
 })();
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"raf":9}],12:[function(require,module,exports){
+},{"raf":12}],15:[function(require,module,exports){
 /* Implements a not (yet) standardised encoding of Open Annotation selectors in URL fragment identifiers.
  * Concretely, this enables making a URL point to a specified *piece* of a document, e.g. any textual quote.
  *
@@ -1843,7 +2110,7 @@ module.exports = {
     fragmentIdentifierFromSelector: fragmentIdentifierFromSelector,
 };
 
-},{}],13:[function(require,module,exports){
+},{}],16:[function(require,module,exports){
 // Activate bidirectional support for quote-selectors in URLs.
 // A quote in a URL fragment identifier is highlighted in the page (= dereferencing),
 // and when text is selected it is quoted in the URL (= referencing).
@@ -1853,14 +2120,20 @@ var Tracker = require('trackr');
 var Referencing = require('./referencing');
 var Dereferencing = require('./dereferencing');
 
-// Enable referencing.
+// Enable referencing: Update URL#hash whenever user selects text.
 Referencing.enabled.set(true);
 
-// Enable dereferencing whenever referencing is inactive.
+// Enable dereferencing whenever referencing is inactive: Highlight and scroll
+// whenever URL#hash changes, unless it was changed by the user's own action.
 Tracker.autorun(function () {
-    Dereferencing.enabled.set( !Referencing.active.get() );
+    var enableDereferencing = !Referencing.active.get();
+    Dereferencing.enabled.set(enableDereferencing);
+    if (enableDereferencing) {
+        // Highlight current quote, and scroll only if it was not made by the user (= on initial load).
+        var scroll = Tracker.currentComputation.firstRun;
+        Dereferencing.runOnce({scroll: scroll});
+    }
 });
-
 
 // Give highlights a yellow background by default.
 (function setDefaultHighlightStyle() {
@@ -1869,7 +2142,7 @@ Tracker.autorun(function () {
     document.head.appendChild(stylesheet);
 })();
 
-},{"./dereferencing":3,"./referencing":14,"trackr":11}],14:[function(require,module,exports){
+},{"./dereferencing":3,"./referencing":17,"trackr":14}],17:[function(require,module,exports){
 // Put any selected text into the URL's fragment identifier.
 
 var Tracker = require('trackr');
@@ -1900,6 +2173,10 @@ function onSelectionChange(event) {
 // Turn selection into fragment identifier, update window's URL.
 function processSelection(selection) {
     if (selection!==null && !selection.isCollapsed) {
+        // Signal our activity (intended to disable dereferencing).
+        active.set(true);
+        Tracker.flush(); // Force update now to prevent race condition with hashchange event.
+
         // Transform selection -> range -> selector -> fragment identifier.
         var range = selection.getRangeAt(0);
         var selector = TextQuoteAnchor.fromRange(document.body, range).toSelector();
@@ -1911,9 +2188,6 @@ function processSelection(selection) {
         else {
             window.location.assign('#'+fragmentIdentifier);
         }
-
-        // Signal our activity (intended to disable dereferencing).
-        active.set(true);
     }
     else { // Nothing is selected.
         // Clear fragment identifier
@@ -1972,7 +2246,7 @@ module.exports = {
     active: active, // TODO turn into read-only version
 };
 
-},{"./oa-selector-in-url":12,"dom-anchor-text-quote":1,"selectionchange-polyfill":7,"trackr":11,"trackr-reactive-var":8}],15:[function(require,module,exports){
+},{"./oa-selector-in-url":15,"dom-anchor-text-quote":1,"selectionchange-polyfill":10,"trackr":14,"trackr-reactive-var":11}],18:[function(require,module,exports){
 // shim for using process in browser
 
 var process = module.exports = {};
@@ -2065,4 +2339,4 @@ process.chdir = function (dir) {
 };
 process.umask = function() { return 0; };
 
-},{}]},{},[13]);
+},{}]},{},[16]);
